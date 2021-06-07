@@ -1,7 +1,7 @@
 const User = require("../models/");
 
 
-module.login = (req, res) => {
+exports.login = (req, res) => {
     const email = req.body.mail;
     const pass = req.body.pass;
     User.find({
@@ -16,11 +16,11 @@ module.login = (req, res) => {
     })
 }
 
-module.logout = (req, res) => {
+exports.logout = (req, res) => {
     res.clearCookie("SESSID").status(200).redirect("/");
 }
 
-module.register = (req, res) => {
+exports.register = (req, res) => {
     const id = req.body.id;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
