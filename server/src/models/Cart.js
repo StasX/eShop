@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const Cart = new Schema({
     client: {
-        id: Schema.ObjectId,
+        id: Schema.Types.ObjectId,
         ref: "User"
     },
     createdAt: {
@@ -12,7 +12,7 @@ const Cart = new Schema({
         default: Date.now
     },
     products: [{
-        id: Schema.ObjectId,
+        id: Schema.Types.ObjectId,
         ref: "Product"
     }]
 });
