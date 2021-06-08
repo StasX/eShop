@@ -8,8 +8,10 @@ const upload = multer({
 
 
 // get all products
-router.get("/", productCtrl.get);
+router.get("/product", productCtrl.get);
 // add product
-router.put("/", upload.single('img'), productCtrl.add);
+router.put("/product", upload.single('img'), productCtrl.add);
 // update products
-router.post("/", upload.single('img'), productCtrl.update);
+router.post("/product/:id", upload.single('img'), productCtrl.update);
+
+module.exports = router;
