@@ -14,7 +14,11 @@ const Cart = new Schema({
     products: [{
         id: Schema.Types.ObjectId,
         ref: "Product"
-    }]
+    }],
+    status: {
+        type: Number,
+        default: 1 // 0 is closed ; 1 is open
+    }
 });
 
 module.exports = mongoose.model("Cart", Cart);
