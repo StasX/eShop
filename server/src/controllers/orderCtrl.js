@@ -4,7 +4,7 @@ const Order = require("../models/Order");
 exports.get = (req, res) => {
     Order.findOne({
         client: {
-            id: req.id
+            id: req.userId
         }
     }, {
         sort: {
@@ -21,9 +21,9 @@ exports.get = (req, res) => {
 }
 // create new order
 exports.add = (req, res) => {
+    const clientId = req.userId;
     const body = req.body;
     const cart = body.cart;
-    const clientId = body.cart;
     const price = body.price;
     const card = body.card;
     const shippingDate = body.date;
