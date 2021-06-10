@@ -31,10 +31,6 @@ exports.add = (req, res) => {
     const street = body.street;
 
     const newOrder = new Order({
-        id: {
-            type: Number,
-            default: 1
-        },
         cart,
         client: clientId,
         price,
