@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const Order = new Schema({
     id: {
         type: Number,
-        default: 1
+        default: 0
     },
     cart: {
         id: Schema.Types.ObjectId,
@@ -30,4 +30,21 @@ const Order = new Schema({
     }
 });
 
-module.exports = mongoose.model("Order", Order);
+const model = mongoose.model("Order", Order);
+
+Order.pre("save", (next) => {
+    model.findOneAndUpdate({
+        _id: Order._id
+    }, {
+        $inc: {
+            id: 1
+        }
+    }, (err) => {
+        if (err) {
+            throw new Error(err);
+        }
+        next();
+    });
+});
+
+module.exports = model;
