@@ -1,0 +1,24 @@
+[{
+    "email" : "john@eshop.com",
+    "firstName": "John",
+    "lastName": "Smith",    
+    "id": 394217995,
+    "password": "$2a$12$Pdoefb9Jc7WAITNKddMfWe3jvmo4n5lA3vLvLzGA1PEK8o2hRPiRG",
+    "address": {
+        "city": "London",
+        "street": "12 Baker Street"
+    },
+    "role": 1
+},
+{
+    "id": 123456789,
+    "firstName": "Adam",
+    "lastName": "Adams",
+    "email": "adams@example.com",
+    "password": "$2a$12$Pdoefb9Jc7WAITNKddMfWe3jvmo4n5lA3vLvLzGA1PEK8o2hRPiRG",
+    "address": {
+        "town": "London",
+        "street": "44 Guild Street"
+    },
+    "role": 0
+}]

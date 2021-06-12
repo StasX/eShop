@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "test-watch": "npm run test -- --watchAll",
+    "test-watch": "npm run test --watchAll",
     "start": "node app/server.js",
-    "watch": "npm run test-watch && nodemon src/server.js 80"
-  }, 
+    "watch": "concurently \"npm run test-watch\" \"nodemon src/server.js 80\""
+  },
   "nodemonConfig": {
     "delay": "3000"
   },
@@ -26,6 +26,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "concurrently": "^6.2.0",
     "jest": "^27.0.4",
     "node-mocks-http": "^1.10.1",
     "nodemon": "^2.0.7",
