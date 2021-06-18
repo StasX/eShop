@@ -30,4 +30,11 @@ app.config([$routeProvider, function ($routeProvider) {
             template: orderTemplate,
             controller: "orderController"
         })
+        .logout("/logout", {
+            template: logoutTemplate,
+            controller: "logoutController"
+        })
+        .otherwise({
+            redirect: "/shop"
+        })
 }]);
