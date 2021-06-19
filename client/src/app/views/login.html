@@ -1,0 +1,38 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!/shop">
+            <img src="img/cart.ng" alt="Logo" width="50" height="38">
+        </a>
+    </div>
+</nav>
+<div class="col-md-5">
+    <form class="container">
+        <div class="row">
+            <div class="form-group">
+                <label for="user">Registred?</label>
+                <input id="user" type="text" class="form-control" placeholder="User Name" ng-model="user" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <input id="user" type="password" class="form-control" placeholder="Password" ng-model="pass" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="submit">Login</button>
+            </div>
+            <div class="col">
+                <a href="#/!register">Sign up</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-5">
+    <div class="container">
+        <div class="row">Our shop present you many fresh products for any taste and price,</div>
+        <div class="row">so each one can to find something tasty for himself.</div>
+    </div>
+</div>
+<img src="img/logo" alt="Logo">
+<div class="col-md-2">{{productsCount}} products available products in our store.</div>
