@@ -1,0 +1,82 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!/shop">
+            <img src="img/cart.ng" alt="Logo" width="50" height="38">
+        </a>
+    </div>
+</nav>
+<div class="col-md-6">
+    <form ng-submit="next()">
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="id">
+                    <div class="input-group-text">ID</div>
+                </label>
+                <input type="text" id="id" class="form-control" ng-model="user.id" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="email">
+                    <div class="input-group-text">Email</div>
+                </label>
+                <input type="email" id="email" class="form-control" ng-model="user.email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="pass">
+                    <div class="input-group-text">Password</div>
+                </label>
+                <input type="password" id="pass" class="form-control" ng-model="user.pass" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="confirm">
+                    <div class="input-group-text">Password confirm</div>
+                </label>
+                <input type="password" id="confirm" class="form-control" ng-model="user.confirm" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-6">
+    <form ng-submit="save()" class="container">
+        <div class="row">
+            <div class="drop-down">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{user.city}}
+                </button>
+                <div class="dropdown-menu {{showMenu}}" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-itm" ng-repeate="city in cities" ng-click="setCity($index)">{{city}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="street">
+                    <div class="input-group-text">Street</div>
+                </label>
+                <input type="text" id="street" class="form-control" ng-model="user.street" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="fname">
+                    <div class="input-group-text">First Name</div>
+                </label>
+                <input type="text" id="fname" class="form-control" ng-model="user.firstName" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label class="input-group-prepend" for="lname">
+                    <div class="input-group-text">Last Name</div>
+                </label>
+                <input type="text" id="lname" class="form-control" ng-model="user.lastName" />
+            </div>
+        </div>
+    </form>
+</div>
