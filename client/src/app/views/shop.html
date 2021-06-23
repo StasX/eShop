@@ -22,5 +22,30 @@
         </div>
     </div>
 </nav>
-<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12" ng-style="leftStyle"></div>
+<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12" ng-style="leftStyle">
+    <h1>{{user.name}}'s cart</h1>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeate="cartProduct in cartProducts">
+                    <ul>
+                        <li><img ng-src="cartProduct.img" alt="{{cartProduct.name}}"></li>
+                        <li>{{cartProduct.name}}</li>
+                        <li>{{cartProduct.quantity}}</li>
+                        <li>{{cartProduct.price}}$</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-xs-6">
+            Total:{{cart.total}}$
+        </div>
+        <div class="col-sm-6 col-xs-6">
+            <a href="/#/!order">Order</a>
+        </div>
+    </div>
+</div>
 <shop-shelf class="col-lg-8 col-md-7 col-sm-12 col-xs-12" ng-style="rightStyle"></shop-shelf>
