@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!/shop">
+            <img src="img/cart.ng" alt="Logo" width="50" height="38">
+        </a>
+    </div>
+    <div class="container-fluid">
+        <div class="col-lg-4 col-md-3 col-sm-2 col-xs">
+            <form ng-submit="search()">
+                <div class="form-row align-items-center">
+                    <div class="form-row align-items-center">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Search: </div>
+                            </div>
+                            <input type="search" class="form-control" placeholder="Product name" ng-model="product" />
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
