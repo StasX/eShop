@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs"></ul>
+
+<div class="card" ng-repeat="product in products" ng-click="select($index)">
+    <img class="img-top" src="" alt="">
+    <div class="card-body">
+        <div class="card-price">{{product.price}}</div>
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">{{product.description}}</P>
+    </div>
+</div>
