@@ -1,6 +1,3 @@
-import {
-    app
-} from "./app";
 import * as loginTemplate from "./views/login.html";
 import * as registerTemplate from "./views/register.html";
 import * as shopTemplate from "./views/shop.html";
@@ -8,7 +5,7 @@ import * as reviewTemplate from "./views/review.html";
 import * as orderTemplate from "./views/order.html";
 
 
-app.config([$routeProvider, function ($routeProvider) {
+export default [$routeProvider, function ($routeProvider) {
     $routeProvider
         .when("/login", {
             template: loginTemplate,
@@ -37,4 +34,4 @@ app.config([$routeProvider, function ($routeProvider) {
         .otherwise({
             redirect: "/shop"
         })
-}]);
+}];

@@ -1,8 +1,3 @@
-import {
-    app
-} from "../app";
-
-
 function loginController($scope, $http) {
     $scope.login = function () {
         $http.post("/user/login", {
@@ -13,4 +8,7 @@ function loginController($scope, $http) {
 }
 
 
-app.controller("loginController", [$scope, $http, loginController]);
+export default {
+    name: "loginController",
+    ctrl: [$scope, $http, loginController]
+}
