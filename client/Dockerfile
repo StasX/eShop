@@ -4,4 +4,4 @@ COPY . .
 RUN npm i -g webpack webpack-cli
 RUN npm i
 
-ENTRYPOINT [ "npm","run","watch" ]
+ENTRYPOINT ["npm","run","watch"]

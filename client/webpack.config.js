@@ -2,11 +2,12 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    context: `${__dirname}/src`,
+    mode: "development",
     entry: `${__dirname}/src/main.js`,
     output: {
         path: `${__dirname}/public`,
-        filename: "js/main.js"
+        filename: "main.js",
+        publicPath: "/js/"
     },
     resolve: {
         extensions: [
