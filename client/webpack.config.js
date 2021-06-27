@@ -41,7 +41,7 @@ module.exports = {
                 use: [{
                     loader: "html-loader",
                     options: {
-                        attributes: {
+                        sources: {
                             list: [{
                                 tag: "img",
                                 attribute: "src",
@@ -113,7 +113,7 @@ module.exports = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            template: "index.html",
+            template: "src/index.html",
             inject: "body"
         }),
         new miniCssExtractPlugin({
