@@ -5,6 +5,9 @@ services:
     container_name: client
     build:
       context: ./client
+    volumes:
+      - ./client/src:/usr/src/app/src
+      - data:/usr/src/app/public
     
   db:
     container_name: db
@@ -22,6 +25,9 @@ services:
     container_name: server
     build:
       context: ./server
+    volumes:
+       - ./server/src:/usr/src/app/src
+       - data:/usr/src/app/public
     links:
       - db
     ports:
