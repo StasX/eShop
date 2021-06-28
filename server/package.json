@@ -7,7 +7,7 @@
     "test": "jest",
     "test-watch": "npm run test --watchAll",
     "start": "node app/server.js",
-    "watch": "concurently \"npm run test-watch\" \"nodemon src/server.js 80\""
+    "watch": "concurrently \"npm run test-watch\" \"nodemon ./src/server.js 80\""
   },
   "nodemonConfig": {
     "delay": "3000"
