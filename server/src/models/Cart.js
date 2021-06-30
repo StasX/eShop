@@ -12,7 +12,7 @@ const Cart = new Schema({
         default: Date.now
     },
     products: [{
-        id: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Product"
     }],
     status: {
