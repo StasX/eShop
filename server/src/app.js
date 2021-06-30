@@ -7,8 +7,6 @@ const user = require("./routes/user");
 
 const app = express();
 
-global._basedir = __dirname;
-
 app.use(express.static("public"));
 
 app.use(cart, category, order, product, user);

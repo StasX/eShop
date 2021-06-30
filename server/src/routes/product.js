@@ -3,7 +3,7 @@ const productCtrl = require("../controllers/productCtrl");
 const multer = require("multer");
 
 const upload = multer({
-    dest: `${__basedir}/uploads/`
+    dest: `${process.env.dir} + uploads/`
 });
 
 
