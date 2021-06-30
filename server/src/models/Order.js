@@ -8,11 +8,11 @@ const Order = new Schema({
         default: 0
     },
     cart: {
-        id: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Cart"
     },
     client: {
-        id: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User"
     },
     date: {
