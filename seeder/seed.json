@@ -1,13 +1,11 @@
 [{
-    "email" : "john@eshop.com",
-    "name" : {
-        "first_name": "John",
-        "last_name": "Smith"
-    },
     "id": 394217995,
+    "firstName": "John",
+    "lastName": "Smith",
+    "email" : "john@eshop.com",
     "password": "$2a$12$Pdoefb9Jc7WAITNKddMfWe3jvmo4n5lA3vLvLzGA1PEK8o2hRPiRG",
     "address": {
-        "city": "London",
+        "town": "London",
         "street": "12 Baker Street"
     },
     "role": 1
