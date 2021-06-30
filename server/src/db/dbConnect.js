@@ -1,4 +1,4 @@
-async function connect() {
+exports.connect = async function () {
     try {
         await mongoose.connect(
             "mongodb://db:27017/eshop", {
@@ -10,7 +10,3 @@ async function connect() {
         throw new Error(err);
     }
 }
-
-module.exports = {
-    connect
-};
