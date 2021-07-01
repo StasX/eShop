@@ -1,15 +1,25 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const fs = require("fs");
 const User = require("../models/User");
 
+
+//! Login
 exports.login = (req, res) => {
+    if (!fs.existsSync(`${process.env.__basedir}/keys/key.pem`)) {
+        throw new Error("Public key not found");
+    }
     const email = req.body.mail;
     const pass = req.body.pass;
     User.find({
         email
     }, (err, users) => {
-        if (err) throw new Error(err);
+        if (err) {
+            throw new Error(err);
+        }
+
         if (users.length == 1 && bcrypt.compareSync(pass, users[0].password)) {
+            const key = fs.readFileSync(`${process.env.__basedir}/keys/key.pem`, "utf8");
             const user = users[0];
 
             const role = {
@@ -37,10 +47,14 @@ exports.login = (req, res) => {
     })
 }
 
+
+//! Logout
 exports.logout = (req, res) => {
     res.clearCookie("SESSID").status(200).redirect("/");
 }
 
+
+//! Register
 exports.register = (req, res) => {
     const id = req.body.id;
     const firstName = req.body.firstName;
