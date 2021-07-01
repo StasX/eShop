@@ -8,7 +8,7 @@ const user = require("./routes/user");
 const app = express();
 
 app.use(express.static("public"));
-
+app.use(express.cookieParser());
 app.use(cart, category, order, product, user);
 
 module.exports = app;
