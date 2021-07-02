@@ -1,6 +1,6 @@
 const http = require("http");
 const app = require("./app");
-const db = require("./db/dbConnect");
+const db = require("./db/db.connect");
 
 process.env.__basedir = __dirname;
 
