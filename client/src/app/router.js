@@ -20,10 +20,6 @@ function router($routeProvider) {
             template: shopTemplate,
             controller: "shopController"
         })
-        .when("/review", {
-            template: reviewTemplate,
-            controller: "reviewController"
-        })
         .when("/order", {
             template: orderTemplate,
             controller: "orderController"
