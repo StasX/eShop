@@ -6,7 +6,7 @@ services:
     build:
       context: ./client
     volumes:
-      - ./client/src:/usr/src/app/src
+      - ./client:/usr/src/app
       - data:/usr/src/app/public
     
   db:
@@ -23,6 +23,8 @@ services:
 
   server:
     container_name: server
+    depends_on:
+      - client
     build:
       context: ./server
     volumes:
