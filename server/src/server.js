@@ -6,6 +6,6 @@ process.env.__basedir = __dirname;
 
 db.connect();
 
-const server = http.createServer();
+const server = http.createServer(app);
 
-server(app).listen(80);
+server.listen(80);
