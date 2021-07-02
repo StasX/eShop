@@ -7,3 +7,5 @@ router.get("/category", categoryCtrl.get);
 router.post("/category", categoryCtrl.add);
 // update category
 router.post("/category/:id", categoryCtrl.update);
+
+module.exports = router;
