@@ -6,8 +6,8 @@ module.exports = {
     entry: `${__dirname}/src/main.js`,
     output: {
         path: `${__dirname}/public`,
-        filename: "main.js",
-        publicPath: "/js/"
+        filename: "js/main.js",
+        publicPath: "js/"
     },
     resolve: {
         extensions: [
