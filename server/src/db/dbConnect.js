@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 exports.connect = async function () {
     try {
         await mongoose.connect(
