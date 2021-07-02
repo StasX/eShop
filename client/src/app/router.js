@@ -4,8 +4,9 @@ import * as shopTemplate from "./views/shop.html";
 import * as reviewTemplate from "./views/review.html";
 import * as orderTemplate from "./views/order.html";
 
+router.$inject = [$routeProvider];
 
-export default [$routeProvider, function ($routeProvider) {
+function router($routeProvider) {
     $routeProvider
         .when("/login", {
             template: loginTemplate,
@@ -33,5 +34,9 @@ export default [$routeProvider, function ($routeProvider) {
         })
         .otherwise({
             redirect: "/shop"
-        })
-}];
+        });
+}
+
+export {
+    router
+};
