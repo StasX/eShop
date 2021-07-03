@@ -68,18 +68,15 @@ module.exports = {
             },
             {
                 test: /\.scss/,
-                use: [{
-                        loader: "style-loader"
-                    },
+                use: [
+                    'style-loader',
                     {
-                        loader: miniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: "css-loader",
+                        loader: miniCssExtractPlugin.loader,
                         options: {
-                            importLoaders: 2
-                        }
+                            esModule: false,
+                        },
                     },
+                    'css-loader',
                     {
                         loader: "postcss-loader",
                         options: {
@@ -87,17 +84,12 @@ module.exports = {
                                 plugins: [
                                     [
                                         "postcss-preset-env",
-                                        {
-                                            // Options
-                                        },
                                     ],
                                 ],
                             },
                         },
                     },
-                    {
-                        loader: "sass-loader"
-                    }
+                    'sass-loader',
                 ]
             },
             {
@@ -110,12 +102,6 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|ico|bmp)$/,
                 type: "asset/resource"
-                /*use: [{
-                    loader: "file-loader",
-                    options: {
-                        outputPath: "img"
-                    },
-                }, ],*/
             }, {
                 test: /\.((woff2?)|(eot)|(ttf)|(svg))$/,
                 use: [{
