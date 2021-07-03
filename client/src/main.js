@@ -11,7 +11,7 @@ import loginCtrl from "../src/app/controllers/login.controller";
 app.config(router);
 
 // controllers
-const controllers = [headCtrl, loginCtrl];
+const controllers = [loginCtrl];
 controllers.forEach((ctrl) => {
     app.controller(ctrl.name, ctrl.ctrl);
 });

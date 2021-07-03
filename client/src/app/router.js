@@ -3,7 +3,7 @@ import * as registerTemplate from "./views/register.html";
 import * as shopTemplate from "./views/shop.html";
 import * as orderTemplate from "./views/order.html";
 
-router.$inject = [$routeProvider];
+router.$inject = ["$routeProvider"];
 
 function router($routeProvider) {
     $routeProvider

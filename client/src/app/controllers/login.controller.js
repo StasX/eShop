@@ -1,3 +1,5 @@
+loginController.$inject = ["$scope", "$http"];
+
 function loginController($scope, $http) {
     $scope.login = function () {
         $http.post("/user/login", {
@@ -10,5 +12,5 @@ function loginController($scope, $http) {
 
 export default {
     name: "loginController",
-    ctrl: [$scope, $http, loginController]
+    ctrl: loginController
 }
