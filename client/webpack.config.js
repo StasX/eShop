@@ -6,7 +6,8 @@ module.exports = {
     entry: `${__dirname}/src/main.js`,
     output: {
         path: `${__dirname}/public`,
-        filename: "js/main.js"
+        filename: "js/main.js",
+        assetModuleFilename: 'img/[hash][ext][query]'
     },
     resolve: {
         extensions: [
@@ -107,13 +108,14 @@ module.exports = {
                 }],
             },
             {
-                test: /\.(jpe?g|png|gif|ico|bmp)/,
-                use: [{
+                test: /\.(jpe?g|png|gif|ico|bmp)$/,
+                type: "asset/resource"
+                /*use: [{
                     loader: "file-loader",
                     options: {
-                        name: "img/[name].[ext]"
+                        outputPath: "img"
                     },
-                }, ],
+                }, ],*/
             }, {
                 test: /\.((woff2?)|(eot)|(ttf)|(svg))$/,
                 use: [{
