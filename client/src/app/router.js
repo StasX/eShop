@@ -1,8 +1,8 @@
-import * as loginTemplate from "./views/login.html";
-import * as registerTemplate from "./views/register.html";
-import * as shopTemplate from "./views/shop.html";
-import * as orderTemplate from "./views/order.html";
-import * as logoutTemplate from "./views/logout,html";
+import loginTemplate from "./views/login.html";
+import registerTemplate from "./views/register.html";
+import shopTemplate from "./views/shop.html";
+import orderTemplate from "./views/order.html";
+import logoutTemplate from "./views/logout.html";
 
 router.$inject = ["$routeProvider"];
 
@@ -24,7 +24,7 @@ function router($routeProvider) {
             template: orderTemplate,
             controller: "orderController"
         })
-        .logout("/logout", {
+        .when("/logout", {
             template: logoutTemplate,
             controller: "logoutController"
         })
