@@ -2,6 +2,7 @@ import * as loginTemplate from "./views/login.html";
 import * as registerTemplate from "./views/register.html";
 import * as shopTemplate from "./views/shop.html";
 import * as orderTemplate from "./views/order.html";
+import * as logoutTemplate from "./views/logout,html";
 
 router.$inject = ["$routeProvider"];
 
