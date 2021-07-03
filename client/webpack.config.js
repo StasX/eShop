@@ -54,8 +54,9 @@ module.exports = {
                 test: /\.css/,
                 use: [{
                         loader: "style-loader"
+                    }, {
+                        loader: miniCssExtractPlugin.loader
                     },
-                    miniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
                         options: {
@@ -69,7 +70,9 @@ module.exports = {
                 use: [{
                         loader: "style-loader"
                     },
-                    miniCssExtractPlugin.loader,
+                    {
+                        loader: miniCssExtractPlugin.loader
+                    },
                     {
                         loader: "css-loader",
                         options: {
@@ -77,7 +80,19 @@ module.exports = {
                         }
                     },
                     {
-                        loader: "postcss-loader"
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "postcss-preset-env",
+                                        {
+                                            // Options
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
                     },
                     {
                         loader: "sass-loader"

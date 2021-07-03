@@ -3,6 +3,6 @@ WORKDIR /usr/src/app
 RUN npm i -g webpack webpack-cli bower
 COPY . .
 RUN bower i
-RUN npm i 
+RUN npm i
 
 ENTRYPOINT ["npm","run","watch"]
