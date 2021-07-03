@@ -1,7 +1,6 @@
 import * as loginTemplate from "./views/login.html";
 import * as registerTemplate from "./views/register.html";
 import * as shopTemplate from "./views/shop.html";
-import * as reviewTemplate from "./views/review.html";
 import * as orderTemplate from "./views/order.html";
 
 router.$inject = [$routeProvider];

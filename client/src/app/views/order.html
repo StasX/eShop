@@ -1,0 +1,97 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#!/shop">
+            <img src="../../assets/img/logo.png" alt="Logo" width="50" height="38">
+        </a>
+    </div>
+</nav>
+<div class="col-md-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                {{name}}'s Cart
+            </div>
+            <div class="col-sm-6">
+                <a href="#!/shop">Back to shop</a>
+            </div>
+        </div>
+        <hr class="row" />
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeate="product in products">
+                    <ul>
+                        <li>
+                            <img ng-src="{{product.img}}" alt="{{product.name}}">
+                        </li>
+                        <li>{{quantity}}</li>
+                        <li>{{price}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="col-md-6">
+    <form class="container" ng-submit="order()">
+        <div class="row">
+            Order
+        </div>
+        <hr class="row" />
+        <div class="row">
+            <div class="container">
+                <div class="row">Shipping Details</div>
+                <hr class="row" />
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="drop-down">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{user.city}}
+                                </button>
+                                <div class="dropdown-menu {{showMenu}}" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-itm" ng-repeate="city in cities" ng-click="setCity($index)">
+                                        {{city}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label class="input-group-prepend" for="street">
+                                    <div class="input-group-text">Street</div>
+                                </label>
+                                <input type="text" id="street" class="form-control" ng-model="street" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group">
+                                <label class="input-group-prepend" for="date">
+                                    <div class="input-group-text">Shipping Date</div>
+                                </label>
+                                <input type="date" id="date" class="form-control" ng-model="date" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="row">Payments:</div>
+                <hr class="row" />
+                <div class="row">
+                    <div class="input-group">
+                        <label class="input-group-prepend" for="card">
+                            <div class="input-group-text">Credit Card</div>
+                        </label>
+                        <input type="text" id="street" class="form-control" ng-model="user.street" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-md btn-danger">Order</button>
+        </div>
+    </form>
+</div>
