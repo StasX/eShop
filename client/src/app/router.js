@@ -3,6 +3,7 @@ import registerTemplate from "./views/register.html";
 import shopTemplate from "./views/shop.html";
 import orderTemplate from "./views/order.html";
 import logoutTemplate from "./views/logout.html";
+import managementTemplate from "./views/management.html";
 
 router.$inject = ["$routeProvider"];
 
@@ -27,6 +28,10 @@ function router($routeProvider) {
         .when("/logout", {
             template: logoutTemplate,
             controller: "logoutController"
+        })
+        .when("/management", {
+            template: managementTemplate,
+            controller: "managementController"
         })
         .otherwise({
             redirect: "/shop"
