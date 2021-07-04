@@ -1,1 +1,33 @@
+html,
+body,
+[ng-view] {
+    height: 100%;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./scss/login.scss";
+@import "./scss/colors.scss";
+
+.link {
+    color: $lightRed;
+    font-weight: bolder;
+
+    &:hover {
+        color: darken($lightRed, 20%);
+    }
+
+    &:active {
+        color: $danger;
+    }
+}
+
+.bolded {
+    font-size: larger;
+    font-weight: bolder;
+    color: $lightRed
+}

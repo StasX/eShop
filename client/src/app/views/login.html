@@ -1,38 +1,51 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#!/shop">
-            <img src="../../assets/img/logo.png" alt="Logo" width="50" height="38">
+            <img src="../../assets/img/logo.png" alt="Logo" width="64" height="44" />
         </a>
     </div>
 </nav>
-<div class="col-md-5">
-    <form class="container" ng-submit="login()">
-        <div class="row">
-            <div class="form-group">
-                <label for="user">Registred?</label>
-                <input id="user" type="text" class="form-control" placeholder="User Name" ng-model="user" />
+<div class="container-fluid top-margin">
+    <div class="row">
+        <div class="col-md-4">
+            <form class="container" ng-submit="login()">
+                <div class="row">
+                    <div class="form-group offset-md-1 col-md-10">
+                        <label for="user">Registred?</label>
+                        <input id="user" type="text" autocomplete="off" class="form-control" placeholder="User Name"
+                            ng-model="user" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group offset-md-1 col-md-10">
+                        <input type="password" autocomplete="off" class="form-control" placeholder="Password"
+                            ng-model="pass" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-md-1 col-md-5">
+                        <button type="submit" class="btn btn-md btn-outline-dark">Login</button>
+                    </div>
+                    <div class="col-md-5 text-right">
+                        <a href="#/!register" class="btn btn-link link">Sign up</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="container">
+                <div class="row">
+                    <img id="logo" src="../../assets/img/logo.png" alt="Logo" width="274" height="185" />
+                </div>
+                <div class="row">
+                    <p class="shop-info">Our shop present you many fresh products for any taste and price,
+                        so each one can to find something tasty for himself.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group">
-                <input id="user" type="password" class="form-control" placeholder="Password" ng-model="pass" />
-            </div>
+        <div class="col-md-4 text-center"><span class="bolded">{{productsCount}}</span> products available products in
+            our store.
         </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit">Login</button>
-            </div>
-            <div class="col">
-                <a href="#/!register">Sign up</a>
-            </div>
-        </div>
-    </form>
-</div>
-<div class="col-md-5">
-    <div class="container">
-        <div class="row">Our shop present you many fresh products for any taste and price,</div>
-        <div class="row">so each one can to find something tasty for himself.</div>
     </div>
 </div>
-<img src="../../assets/img/logo.png" alt="Logo">
-<div class="col-md-2">{{productsCount}} products available products in our store.</div>
