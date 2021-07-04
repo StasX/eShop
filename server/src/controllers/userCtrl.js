@@ -9,7 +9,7 @@ exports.login = (req, res) => {
     if (!fs.existsSync(`${process.env.__basedir}/keys/key.pem`)) {
         throw new Error("Public key not found");
     }
-    const email = req.body.mail;
+    const email = req.body.user;
     const pass = req.body.pass;
     User.find({
         email
@@ -27,7 +27,7 @@ exports.login = (req, res) => {
             }
 
             const data = Object.assign({
-                name: `${user.firstname} ${user.lastname}`,
+                name: `${user.firstName} ${user.lastName}`,
                 street: user.street,
                 city: user.city,
             }, role);

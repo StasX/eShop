@@ -9,9 +9,13 @@ function loginController($scope, $http) {
     })
 
     $scope.login = function () {
-        $http.post("/user/login", {
+        $http.post("/user", {
             user: $scope.user,
             pass: $scope.pass
+        }).then((res) => {
+            console.log(res.data);
+        }, (err) => {
+            console.error(err);
         });
     }
 }

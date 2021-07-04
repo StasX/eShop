@@ -1,5 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 const cart = require("./routes/cart");
 const category = require("./routes/category");
 const order = require("./routes/order");
@@ -10,6 +11,10 @@ const app = express();
 
 app.use(express.static("public"));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+app.use(bodyParser.json())
 app.use(cart);
 app.use(category);
 app.use(order);
