@@ -12,6 +12,17 @@ exports.get = (req, res) => {
     });
 }
 
+exports.total = (req, res) => {
+    Product.countDocuments({}, (err, total) => {
+        if (err) {
+            throw new Error(err);
+        }
+        res.json({
+            total
+        });
+    });
+}
+
 exports.add = (req, res) => {
 
 }

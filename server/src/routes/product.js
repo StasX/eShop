@@ -9,6 +9,8 @@ const upload = multer({
 
 // get all products
 router.get("/product", productCtrl.get);
+// get number of products
+router.get("/product/total", productCtrl.total);
 
 // add product
 router.put("/product", upload.single('img'), productCtrl.add);
