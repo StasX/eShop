@@ -1,6 +1,6 @@
-loginController.$inject = ["$scope", "$http"];
+loginController.$inject = ["$scope", "$http", "$location"];
 
-function loginController($scope, $http) {
+function loginController($scope, $http, $location) {
     $scope.productsCount = 0;
     $http.get("/product/total").then((res) => {
         $scope.productsCount = res.data.total;
@@ -13,7 +13,8 @@ function loginController($scope, $http) {
             user: $scope.user,
             pass: $scope.pass
         }).then((res) => {
-            console.log(res.data);
+            const path = res.data.role ? "/management" : "/shop";
+            $location.path(path);
         }, (err) => {
             console.error(err);
         });
