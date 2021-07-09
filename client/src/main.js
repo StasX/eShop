@@ -8,6 +8,7 @@ import {
 } from "../src/app/router";
 import loginCtrl from "../src/app/controllers/login.controller";
 import managementCtrl from "../src/app/controllers/management.controller";
+import storeContentCtrl from "../src/app/controllers/storeContent.controller";
 
 import productShelfDirective from "../src/app/directives/productShelf";
 
@@ -15,7 +16,7 @@ import productShelfDirective from "../src/app/directives/productShelf";
 app.config(router);
 
 // controllers
-const controllers = [loginCtrl, managementCtrl];
+const controllers = [loginCtrl, managementCtrl, storeContentCtrl];
 controllers.forEach((ctrl) => {
     app.controller(ctrl.name, ctrl.ctrl);
 });
