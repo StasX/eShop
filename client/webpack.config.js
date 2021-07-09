@@ -99,7 +99,7 @@ module.exports = {
                 }],
             },
             {
-                test: /\.(jpe?g|png|gif|ico|bmp)$/,
+                test: /\.(jpe?g|png|gif|ico|bmp|ico)$/,
                 type: "asset/resource",
                 generator: {
                     filename: 'img/[hash][ext][query]',
