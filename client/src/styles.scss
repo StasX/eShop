@@ -4,14 +4,20 @@ body,
     height: 100%;
 }
 
+* {
+    position: relative;
+}
+
 #logo {
     display: block;
     margin: auto;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "./scss/login.scss";
 @import "./scss/colors.scss";
+@import "./scss/management.scss";
 
 .link {
     color: $lightRed;
@@ -30,4 +36,45 @@ body,
     font-size: larger;
     font-weight: bolder;
     color: $lightRed
+}
+
+.red-group,
+.btn-red {
+    background-color: $darkRed;
+    border: $darkRed;
+    color: white !important;
+}
+
+.dark-group {
+    background-color: $dark;
+    border: $dark;
+    color: white !important;
+}
+
+.btn-red {
+    &:hover {
+        background-color: $danger;
+        border: $danger;
+    }
+
+    &:active {
+        background-color: $lightRed;
+        border: $lightRed;
+    }
+}
+
+hr {
+    background-color: #000;
+}
+
+.nav-search {
+    margin: 12px 0 4px 0;
+
+    .col {
+        padding: 0;
+    }
+}
+
+.pull-right {
+    float: right;
 }

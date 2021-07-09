@@ -6,8 +6,7 @@ module.exports = {
     entry: `${__dirname}/src/main.js`,
     output: {
         path: `${__dirname}/public`,
-        filename: "js/main.js",
-        assetModuleFilename: 'img/[hash][ext][query]'
+        filename: "js/main.js"
     },
     resolve: {
         extensions: [
@@ -101,16 +100,17 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|ico|bmp)$/,
-                type: "asset/resource"
+                type: "asset/resource",
+                generator: {
+                    filename: 'img/[hash][ext][query]',
+                },
             }, {
                 test: /\.((woff2?)|(eot)|(ttf)|(svg))$/,
-                use: [{
-                    loader: "file-loader",
-                    options: {
-                        name: "fonts/[name].[ext]",
-                    },
-                }, ],
-            },
+                type: "asset/resource",
+                generator: {
+                    filename: 'fonts/[name][ext]',
+                },
+            }
         ]
     },
     plugins: [
@@ -119,8 +119,8 @@ module.exports = {
             inject: "body"
         }),
         new miniCssExtractPlugin({
-            filename: "css/[name].css",
-            chunkFilename: "css/[id].css"
+            filename: "[name].css",
+            chunkFilename: "[id].css"
         })
     ],
     watch: true,
