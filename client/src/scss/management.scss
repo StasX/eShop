@@ -39,8 +39,7 @@
     }
 
     div {
-        display: table-cell;
-        vertical-align: middle;
+        padding-top: 8px;
     }
 }
 
@@ -53,4 +52,27 @@
     width: 48px;
     height: 48px;
     float: right;
+}
+
+.product-header {
+    margin-bottom: 0;
+
+    div {
+        margin-top: 20px;
+    }
+}
+
+.dropdown-menu {
+    width: 100%;
+
+    .dropdown-item {
+        font-weight: bolder;
+        cursor: default;
+
+        &:hover {
+            background-color: $darkRed;
+            color: white;
+        }
+    }
+
 }
