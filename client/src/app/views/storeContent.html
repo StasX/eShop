@@ -1,12 +1,12 @@
 <ul class="nav nav-tabs">
-    <li class="nav-item" ng-repeate="category in categories" ng-click="setCategory($index)">
+    <li class="nav-item" ng-repeat="category in categories" ng-click="setCategory($index)">
         <span class="nav-link">
             {{category.name}}
         </span>
     </li>
 </ul>
 
-<div class="card" ng-repeate="product in products" ng-click="select($index)">
+<div class="card" ng-repeat="product in products" ng-click="select($index)">
     <img class="img-top" ng-src="" alt="{{product.name}}">
     <div class="card-body">
         <div class="card-price">{{product.price}}</div>
