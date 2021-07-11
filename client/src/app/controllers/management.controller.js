@@ -8,10 +8,8 @@ function managementController($scope, $rootScope, $http) {
     $scope.showProductForm = false;
     $scope.showMenu = false;
     $scope.categories = $rootScope.categories || [];
-    $scope.product = {
-        img: null
-    };
-    $scope.imgSrc = $scope.product.img ? URL.createObjectURL($scope.product.img) : "";
+    $scope.file = null;
+    $scope.imgSrc = "";
 
     $scope.$watch(function () {
         return $rootScope.categories;
@@ -31,9 +29,9 @@ function managementController($scope, $rootScope, $http) {
         $scope.selectedCategoryIndex = index;
         $scope.showMenu = false;
     }
-    $scope.$watch("product.img", () => {
-        if ($scope.product.img) {
-            $scope.imgSrc = URL.createObjectURL($scope.product.img);
+    $scope.$watch("file", () => {
+        if ($scope.file) {
+            $scope.imgSrc = URL.createObjectURL($scope.file);
             $scope.showImg = true;
         }
     }, false);
