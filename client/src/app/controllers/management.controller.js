@@ -31,6 +31,7 @@ function managementController($scope, $rootScope, $http) {
     }
     $scope.$watch("file", () => {
         if ($scope.file) {
+            $scope.fileStatus = `File: "${$scope.file.name}" choised`;
             $scope.imgSrc = URL.createObjectURL($scope.file);
             $scope.showImg = true;
         }
