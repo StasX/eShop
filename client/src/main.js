@@ -11,6 +11,7 @@ import managementCtrl from "../src/app/controllers/management.controller";
 import storeContentCtrl from "../src/app/controllers/storeContent.controller";
 
 import productShelfDirective from "../src/app/directives/productShelf";
+import fileModelDirective from "../src/app/directives/fileModel";
 
 // config router
 app.config(router);
@@ -23,7 +24,7 @@ controllers.forEach((ctrl) => {
 
 // direcctives
 
-const directives = [productShelfDirective];
+const directives = [productShelfDirective, fileModelDirective];
 directives.forEach((directive) => {
     app.directive(directive.name, directive.directive);
 });
