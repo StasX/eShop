@@ -10,6 +10,7 @@ function managementController($scope, $rootScope, $http) {
     $scope.categories = $rootScope.categories || [];
     $scope.file = null;
     $scope.imgSrc = "";
+    $scope.price = 0;
 
     $scope.$watch(function () {
         return $rootScope.categories;
