@@ -3,7 +3,7 @@ function productNameValidation() {
         require: "ngModel",
         link: function (scope, element, attr, ctrl) {
             function prodNameValidation(value) {
-                ctrl.$setValidity("productName", /[A-Z][a-z]+(\s[A-Z][a-z]+)*/.test(value));
+                ctrl.$setValidity("productName", /^\w+(\s?\d*\w*)*$/.test(value));
                 return value;
             }
             ctrl.$parsers.push(prodNameValidation);

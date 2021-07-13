@@ -24,7 +24,7 @@
             <div class="container product-form-container">
                 <div class="row">
                     <h4 class="col product-header">
-                        <div>{{productName}}</div>
+                        <div>{{label}}</div>
                     </h4>
                     <div class="col">
                         <button class="btn btn-md btn-outline-dark btn-add" ng-click="createNewProduct()">
@@ -41,8 +41,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text dark-group">Product name:</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Product name" ng-model="name"
-                                        product-name-validation />
+                                    <input type="text" name="name" class="form-control" placeholder="Product name"
+                                        ng-model="productName" product-name-validation required="required" />
                                 </div>
                             </div>
                         </div>
@@ -52,8 +52,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text dark-group">Price:</span>
                                     </div>
-                                    <input type="number" step="0.01" min="0.01" class="form-control" placeholder="Price"
-                                        ng-model="price" price-validation />
+                                    <input type="number" name="price" step="0.01" min="0.01" class="form-control"
+                                        placeholder="Price" ng-model="productPrice" price-validation
+                                        required="required" />
                                     <div class="input-group-append">
                                         <span class="input-group-text dark-group">$</span>
                                     </div>
